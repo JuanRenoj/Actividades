@@ -225,7 +225,7 @@ position:relative;
 }
 .subcontainer-data{
   position: relative;
-  height: calc(100vh - 290px);
+  height: calc(100vh - 300px);
   overflow-y: auto;
   overflow-x: hidden;
 display: grid;
@@ -236,7 +236,7 @@ grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem),1fr));
 }
 .container-data{
   position: relative;
-  height: calc(100vh - 230px);
+  height: calc(100vh - 250px);
   overflow-y: auto;
   overflow-x: hidden;
 display: grid;

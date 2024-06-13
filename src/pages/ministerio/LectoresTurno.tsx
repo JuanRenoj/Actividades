@@ -220,7 +220,7 @@ function LectoresActividad() {
         <ModuleHeader>
             <SearchContainer>
                 <InputSeacrch value={searchValue} onChange={searchItem} />
-                <ButtonAdd title='Agregar' onClick={setShowModal} showModal={showModal}/>
+                <ButtonAdd title='Nuevo' onClick={setShowModal} showModal={showModal}/>
             </SearchContainer>
             <Tab>
                 <OptionTab tabActive={sortByStatus} value='' nameTab='Todo' onClick={searchItemStatus} />
