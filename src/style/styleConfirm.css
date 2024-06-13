@@ -1,0 +1,43 @@
+@import url(./color.css);
+.div-confirm{
+height: 150px;
+display: flex;
+flex-direction: column;
+gap: 8px;
+background-color: var(--primary);
+}
+.title-comfirm{
+
+}
+.div-confirm-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+
+}
+.btn-yes{
+background-color: var(--secondary);
+width: 100px;
+padding: 3px 6px;
+color: var(--acent);
+text-align: center;
+border-radius: 10px;
+}
+.btn-no{
+    background-color: transparent;
+    width: 100px;
+padding: 3px 6px;
+color: var(--secondary);
+border: 1px solid var(--secondary);
+text-align: center;
+border-radius: 10px;
+}
+
+.btn-yes:hover{
+    opacity: 50%;
+    }
+    .btn-no:hover{
+        opacity: 50%;
+    }

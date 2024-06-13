@@ -7,7 +7,7 @@ import React, { FormEvent, ReactNode } from 'react'
         title:string
     }
 function Modal({show,setShow,onSubmit,children,title}:ModalProps) {
-  console.log(show)
+
   return (
     <div className={`${show ? "modal show-modal" : "modal"}`}>
       <div className='modal-container'>

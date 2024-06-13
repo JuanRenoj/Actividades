@@ -1,0 +1,127 @@
+
+.div-select{
+    display: flex;
+    justify-content: right;
+    padding: 2px 35px 5px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .input-select{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    gap: 5px;
+    margin: 5px 0px;
+    width: 70%;
+    }
+    .input-select label{
+      font-size: 0.875rem;
+    }
+
+  .drop-down{
+    position: relative;
+  
+  }
+
+  .div-button-dropdown {
+    font-size: 0.7rem;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+  margin: 25px 1px 0px 0px;
+    
+  }
+  
+  .menu-dropdown{
+    display: flex;
+    flex-direction: column;
+    background: var(--secondary);
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px var(--shadow);
+    gap: 5px;
+    padding: 10px 20px;
+    width: 100px;
+    
+  }
+  .item-dropdown{
+   border-bottom: 1px solid var(--shadow);
+   padding: 4px;
+  }
+  .item-dropdown:hover{
+    opacity: 50%;
+    cursor: pointer;
+  }
+  .close-dropdown{
+    position: absolute;
+    right: 25px;
+    top :50px;
+    z-index: 1;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+    height: 0;
+   overflow: hidden;
+  }
+  
+  .open-dropdown{
+    position: absolute;
+    right: 25px;
+    top :85px;
+    z-index: 1;
+    transition: all 0.5s ease-in;
+     opacity: 1;
+   height: auto;
+  
+  
+  }
+  .open-dropdown::after{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary);
+    z-index: 2;
+    position: absolute;
+    top:-10px;
+    rotate: 45deg;
+    right: 40%;
+  }
+  .subOptionDown{
+  position:relative;
+  height: auto;
+  width: 150px;
+  padding: 5px;
+  }
+  .submenu-dropdown{
+    display: none;
+    background-color: var(--secondary);   
+  }
+
+  .subOptionDown:hover + .submenu-dropdown{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    padding:10px;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    gap: 8px;
+    position: absolute;
+    right: 155px;
+    bottom: 10px;
+  
+    
+  }
+  .subOptionDown +.submenu-dropdown::after{
+    content: " ";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -8px;
+    bottom: 8px;
+    rotate: 45deg;
+    background-color: var(--secondary);
+  }

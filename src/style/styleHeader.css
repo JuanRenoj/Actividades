@@ -1,17 +1,26 @@
 @import url("./color.css");
 .header{
-    width: 100%;
     height: var(--headerHeight);
     background-color: var(--primary);
     font-size: 1.2rem;
     padding:  5px 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     box-shadow: 1px 1px 1px var(--shadow);
 
     }
-    .header i{
+    
+    .div-menu{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .div-menu i{
 font-size: 2rem;
     }
-    
+
+    .div-title-page{
+        padding: 0px 20px;
+    }

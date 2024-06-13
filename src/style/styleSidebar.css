@@ -1,17 +1,48 @@
 @import url("./color.css");
 .sidebar{
-    position: absolute;
-    height: 100vh;
+    position: absolute;  
     width: 240px;
+    height: 100vh;
     top: 0;
     left: 0;
     background-color: var(--primary);
     display: none;
     box-shadow: 0.5px 0.5px 3px var(--shadow);
-    z-index: 1;
+    z-index: 2;
+   transition: all 1s ease-in-out;
 }
+
  .open{
-    display: block;
+display: block;
+ 
+}
+
+@keyframes displayIn {
+    0%{
+        width: 0;
+        height: 0;
+        border-top-right-radius: 100%;
+    }
+    100%{
+        width: 240;
+        height: 100vh;
+        border-top-right-radius: 0%;  
+    }
+    
+}
+
+@keyframes displayIOut{
+    
+    0%{
+        width: 240;
+        height: 100vh;
+        border-top-right-radius: 0%;  
+    }
+    100%{
+        width: 0;
+        height: 0;
+        border-top-right-radius: 100%;
+    }
 }
 
 .header-sidebar{
@@ -71,7 +102,7 @@ cursor: pointer;
 
 .sub-menu{
     overflow: auto;
-    height: 300px;
+    max-height: 300px;
     display: none;
 }
 .sub-menu-open{

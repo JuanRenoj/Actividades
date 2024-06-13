@@ -4,6 +4,9 @@ import "./style/style.css"
 import "./style/styleSidebar.css"
 import "./style/styleHeader.css"
 import "./style/styleModal.css"
+import "./style/styleInputSelect.css"
+import "./style/styleButtons.css"
+import "./style/styleConfirm.css"
 import Home from './pages/home/Home';
 import "boxicons/css/boxicons.min.css"
 

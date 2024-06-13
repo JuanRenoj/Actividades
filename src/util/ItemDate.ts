@@ -1,11 +1,13 @@
 import { ItemDatesType } from "../interfaces/ItemDates"
 
 export const ItemDate=(date:string):ItemDatesType=>{
+ 
 let newDate=new Date(date)
+
 let item:ItemDatesType={
-    day:newDate.getDay().toString(),
-    dayName:newDate.toLocaleDateString("es-GT",{weekday:"long"}),
-    monthName:newDate.toLocaleDateString("es-GT",{month:"long"}),
+    day:date.split("-")[2],
+    dayName:newDate.toLocaleString("es-GT",{weekday:"long"}),
+    monthName:newDate.toLocaleString("es-GT",{month:"long"}),
     year:newDate.getFullYear().toString(),
 }
 return item

@@ -1,0 +1,117 @@
+.container{
+    width: 100%;
+ 
+    position: relative;
+  
+}
+.wrap{       
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px;
+  
+}
+.contentInputSelect{
+display: flex;
+flex-direction: row;
+gap:  10px;
+
+
+}
+.inputSelect{
+width: 100%;
+}
+.input{
+   
+    width: calc(100% - 80px);
+    padding-right: 50px;
+    
+    
+}
+.divButton{
+    position: absolute;
+    width: 30px;
+
+    justify-content: center;
+    right: 18px;
+    font-size: 2rem;
+    
+}
+.dropDown{
+position: relative;
+}
+.dropDownMenu{
+position: absolute;
+right: 4%;
+background-color: var(--secondary);
+border-radius: 10px;
+padding: 10px;
+width: 100px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+z-index: 2;
+}
+.dropDownMenu::after{
+    content: " ";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -8px;
+    right: 9px;
+    rotate: 45deg;
+    background-color: var(--secondary);
+}
+.open{
+display: flex;
+flex-direction: column;
+gap: 8px;
+background-color: var(--secondary);
+height: auto;
+opacity: 1;
+transition: all 1s ease;
+cursor: pointer;
+}
+.close{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--secondary);
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 1s ease;
+
+}
+.itemDropDown{
+border-bottom: 1px solid var(--text);
+}
+.optionDropDown{
+
+}
+.subMenuDropDown{
+    display: none;
+}
+.subMenuDropDown::after{
+    content: " ";
+    width: 20px;
+    height: 20px;
+    rotate: 45deg;
+    position: absolute;
+    background-color: var(--secondary);
+    right: -5px;
+    bottom: 10px;
+}
+.optionDropDown:hover + .subMenuDropDown{
+background-color: var(--secondary);
+position: absolute;
+left:-180px;
+bottom: 0;
+display: flex;
+flex-direction: column;
+gap: 8px;
+width: 150px;
+border-radius: 8px;
+padding: 10px;
+}

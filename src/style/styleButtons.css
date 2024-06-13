@@ -1,0 +1,74 @@
+
+/* style buttons  */
+.btn-primary{
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: var(--text);
+    font-size: 1rem;
+    border-style: none;
+  }
+  .btn-secondary{
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--secondary);
+    color: var(--text);
+    font-size: 1rem;
+    border-style: none;
+  }
+  .btn-acent{
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--acent);
+    color: var(--text);
+    font-size: 1rem;
+    border-style: none;
+  }
+  .btn-primary:hover{
+    opacity: 50%;
+  }
+  .btn-secondary:hover{
+    opacity: 50%;
+  }
+  .btn-acent:hover{
+    opacity: 50%;
+  }
+  .btn-primary-outline{
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color:transparent;
+    color: var(--primary);
+    font-size: 1rem;
+    border:  1px solid var(--primary);
+  }
+  .btn-secondary-outline{
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color:transparent;
+    color: var(--secondary);
+    font-size: 1rem;
+    border:  1px solid var(--secondary);
+  }
+  .btn-acent-outline{padding: 8px 16px;
+    border-radius: 8px;
+    background-color:transparent;
+    color: var(--acent);
+    font-size: 1rem;
+    border:  1px solid var(--acent);
+  }
+  
+  .btn-primary-outline:hover{
+    background-color: var(--primary);
+    color: var(--text);
+ 
+  }
+  .btn-secondary-outline:hover{
+    background-color: var(--secondary);
+    color: var(--text);
+  
+  }
+  .btn-acent-outline:hover{
+    background-color: var(--acent);
+    color: var(--text);
+ 
+  }

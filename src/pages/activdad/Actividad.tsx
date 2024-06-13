@@ -9,38 +9,38 @@ import {getFirestore,collection, addDoc,getDocs} from 'firebase/firestore'
 import { ActividadType, getDataActivity } from '../../interfaces/Activadad'
 import { SortData } from '../../util/SortData';
 import { SearchItem } from '../../util/SearchItem';
+import Tab from '../../components/tabs/Tab';
+import OptionTab from '../../components/tabs/OptionTab';
+import DropDownSort from '../../components/dropdowns/DropDownSort';
+import OptionSort from '../../components/dropdowns/OptionSort';
+import DataContainer from '../../components/containers/DataContainer';
+import SearchContainer from '../../components/containers/SearchContainer';
+import InputSeacrch from '../../components/inputs/InputSeacrch';
+import ModuleHeader from '../../components/containers/ModuleHeader';
+import Data from '../../service/Data';
+import ContainerButtonSort from '../../components/containers/ContainerButtonSort';
 
 function Activdad() {
   const db=getFirestore();
-const [openSort, setOpenSort] = useState<boolean>(false)
+  const TABLENAME="Actividad"
 const [tabActive, setTabActive] = useState<string>("")
-
 const [activityData, setActivityData] = useState<ActividadType[]>([]);
 const [activityDataAux, setActivityDataAux] = useState<ActividadType[]>([]);
 const [ASC, setASC] = useState<boolean>(false)
 const [searchValue, setSearchValue] = useState<string>("")
-const [searchTab, setSearchTab] = useState<string>("")
+
   useEffect(()=>{
 getActivity()
   },[])
 const getActivity = async():Promise<void> => {
-  try {
-   let querySnapshot=await getDocs(collection(db,"Actividad"));
-   console.log(querySnapshot)
-   let temporalResult:any=[];
-   querySnapshot.forEach((doc)=>{
-     console.log(doc.data())
-     temporalResult.push(doc.data())
-   })
-   setActivityData(temporalResult)
-   setActivityDataAux(temporalResult)
-   console.log(temporalResult)
-  } catch (error) {
-   setActivityData([])
-   setActivityDataAux([])
-   console.log(error)
-   
+  let result:[]=await Data.ViewData(TABLENAME) as unknown as any;
+  if(result.length > 0){
+    setActivityData(SortData(result,"fecha",true))
+    setActivityDataAux(SortData(result,"fecha",true)) 
+  return
   }
+  setActivityData([])
+  setActivityDataAux([]) 
 }
 const sortData = (column:string) => {
   setActivityData(SortData(activityDataAux,column as keyof ActividadType,ASC))
@@ -58,33 +58,24 @@ const searchItemTab = (estado:string) => {
 
   return (
     <>
-    <div className='div-header'>
-      <div className='div-search'>
-        <div className='div-input-search'>
-            <i className='bx bx-search icon-search'></i>
-            <input type='search'className='input-search' value={searchValue} onChange={searchItem} />
-        </div>      
-        <button className='btn-secondary'>+</button>
-      </div>
-      <div className='div-tabs'>
-        <span className={`${tabActive==="" ? "tab-active":""}`} onClick={()=>searchItemTab("")}>Actividedes</span>
-        <span className={`${tabActive==="Pendiente" ? "tab-active":""}`} onClick={()=>searchItemTab("Pendiente")}>Pendientes</span>
-        <span className={`${tabActive==="Pasada" ? "tab-active":""}`} onClick={()=>searchItemTab("Pasada")}>Pasadas</span>
-        <span className={`${tabActive==="Activo" ? "tab-active":""}`} onClick={()=>searchItemTab("Activo")}>Activo</span></div>
-      <div className='div-sort'>
-        <div className={`${openSort ? "close-sort  open-sort":"close-sort"}`}>
-          <div className='menu-sort'>
-            <span onClick={()=>sortData("nombre")}>Nombre</span>
-            <span onClick={()=>sortData("fecha")}>Fecha</span>
-            <span onClick={()=>sortData("lugar")}>Lugar</span>
-           
-          </div>
-        </div>
-        
-        <i className='bx bx-sort-z-a' onClick={()=>setOpenSort(!openSort)}></i>
-      </div>      
-    </div>
-    <div className='container-data'>    
+    <ModuleHeader>
+      <SearchContainer>
+        <InputSeacrch value={searchValue} onChange={searchItem}/>
+      </SearchContainer>      
+      <Tab>
+        <OptionTab nameTab='Actividades' tabActive={tabActive} value='' onClick={searchItemTab}/>
+        <OptionTab nameTab='Pendiente' tabActive={tabActive} value='Pendiente' onClick={searchItemTab}/>
+        <OptionTab nameTab='Activo' tabActive={tabActive} value='Activo' onClick={searchItemTab}/>
+      </Tab>
+      <ContainerButtonSort>
+      <DropDownSort>
+        <OptionSort title='Nombre' column='nombre' onClick={sortData}/>
+        <OptionSort title='Fecha' column='fecha' onClick={sortData}/>
+        <OptionSort title='Lugar' column='lugar' onClick={sortData}/>
+      </DropDownSort>
+      </ContainerButtonSort>
+    </ModuleHeader>
+    <DataContainer>
       {activityData.length>0 ?
       activityData.map((item,index)=>(
          <CardActividad key={index} item={item}/>
@@ -92,7 +83,8 @@ const searchItemTab = (estado:string) => {
       
       :
       null}
-   </div>
+
+   </DataContainer>
     </>
   )
 }
