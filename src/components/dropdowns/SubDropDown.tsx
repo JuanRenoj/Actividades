@@ -1,19 +1,13 @@
 import React,{useState} from 'react'
 import { GrupoType } from '../../interfaces/Grupo'
+import { GetNames } from '../../util/GetName'
 interface Props{
     item:GrupoType[]
     onClick:(params:string)=>void
 }
 function SubDropDown({item,onClick}:Props) {
 
-const names= (integrantes:string):string[] => {
-    console.log(integrantes)
-  let result:string[]=[]
-  if(integrantes !==undefined){
-  result=integrantes.split(",");
-  }
-  return result
-}
+
 
 
   return (
@@ -25,7 +19,7 @@ const names= (integrantes:string):string[] => {
         {data.nombre}      
         </span>
         <div>
-            {names(data.integrantres).map((xname)=>(
+            {GetNames(data.integrantres).map((xname)=>(
                 <span>{xname}</span>
             ))}
         </div>

@@ -231,7 +231,7 @@ position:relative;
 display: grid;
 padding: 10px 20px;
 gap: 20px;
-grid-auto-rows:14rem;
+grid-auto-rows:20rem;
 grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem),1fr));
 }
 .container-data{
@@ -291,7 +291,7 @@ grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem),1fr));
 .card-header{
   display: flex;
   justify-content: space-between;
-height: 30%;
+height: 20%;
 align-items: center;
 
 }
@@ -307,8 +307,18 @@ align-items: center;
 .card-info{
   display: flex;
   flex-direction: column;
-  height: 40%;
+  height: 60%;
   gap: 5px;
+}
+.label-observacion{
+  height: 120px;
+display: block;
+text-overflow: ellipsis;
+white-space: nowrap;
+font-size: .875rem;
+
+width: 230px;
+overflow-x: hidden;
 }
 .card-footer{
   display: flex;
@@ -316,7 +326,7 @@ align-items: center;
   justify-content: center;
   align-items: center;
  
-  height: 30%;
+  height: 20%;
 }
 .intervalDay{
   font-size: 0.8rem;

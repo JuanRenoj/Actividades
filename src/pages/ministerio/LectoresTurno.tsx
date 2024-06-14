@@ -80,7 +80,11 @@ function LectoresActividad() {
         }
         
         const handleEstado = (e:ChangeEvent<HTMLInputElement>) => {
-          setEstado(e.target.value)
+          let value=e.target.value
+          if(value.length <=25){
+              setEstado(e.target.value)
+          }
+        
         }
         const handleFecha = (e:ChangeEvent<HTMLInputElement>) => {
           setFecha(e.target.value)
@@ -214,18 +218,19 @@ function LectoresActividad() {
             
             <TextInput value={hora} onChange={handleHora} label='Hora' type='time' required/>
             <SelectGruop item={groupData} onClick={selectEncargado} onChange={handleEncargado} value={encargado} label='Seleccionar o ingresar encargado' required />  
-            <TextInput value={estado} onChange={handleEstado} label='Estado' type='text' required/>
+            <TextInput value={estado} onChange={handleEstado} label='Observacion' type='text' required/>
         </Modal>
        
         <ModuleHeader>
             <SearchContainer>
                 <InputSeacrch value={searchValue} onChange={searchItem} />
-                <ButtonAdd title='Nuevo' onClick={setShowModal} showModal={showModal}/>
+                <ButtonAdd title='+' onClick={setShowModal} showModal={showModal}/>
             </SearchContainer>
             <Tab>
                 <OptionTab tabActive={sortByStatus} value='' nameTab='Todo' onClick={searchItemStatus} />
-                <OptionTab tabActive={sortByStatus} value='Activo' nameTab='Activo' onClick={searchItemStatus} />
+               {/*  <OptionTab tabActive={sortByStatus} value='Activo' nameTab='Activo' onClick={searchItemStatus} />
                 <OptionTab tabActive={sortByStatus} value='Pendiente' nameTab='Pendiente' onClick={searchItemStatus} />
+            */} 
             </Tab>
             <ContainerButtonSort>
             <DropDownSort>

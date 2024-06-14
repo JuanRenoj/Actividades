@@ -22,9 +22,13 @@ const date=ItemDate(item.fecha);
        
         </div>
         <div className='card-info'>
+          <span>Lugar y Hora:</span>
           <span>{item.lugar}</span>
+          
           <span>{`${item.hora} Hrs`}</span>        
-            <span>{item.estado}</span>
+         
+            <span>Obs.:</span>
+           <span className='label-observacion'>{`${item.estado}`}</span>
             <span className='intervalDay'>{DayInterval(item.fecha,item.hora)}</span>
         </div>
         <div className='card-footer'>          

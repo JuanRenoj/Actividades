@@ -2,6 +2,8 @@ import React,{ReactNode} from 'react'
 
 import { ItemDate } from '../../util/ItemDate'
 import { TurnoType } from '../../interfaces/Turno';
+import { DayInterval } from '../../util/DayInterva';
+
 interface CardProps{
   item:TurnoType
   children:ReactNode
@@ -22,10 +24,15 @@ const date=ItemDate(item.fecha);
        
         </div>
         <div className='card-info'>
+          <span>Lugar y Hora:</span>
           <span>{item.lugar}</span>
-          <span>{`${item.hora} Hr,    Estado: ${item.estado}`}</span>        
-           <span>{item.encargados}</span>
+          <span>{`${item.hora} Hrs`}</span>        
+          <span>{`Encargado: ${item.encargados}`}</span>
+
+           <span className='label-observacion'>{`Obs.: ${item.estado}`}</span>
+           <span className='intervalDay'>{DayInterval(item.fecha,item.hora)}</span>
         </div>
+      
         <div className='card-footer'>          
        {children}
         </div>

@@ -161,7 +161,7 @@ function Grupos() {
         <ModuleHeader>
             <SearchContainer>
                 <InputSeacrch value={searchValue} onChange={searchItem} />
-                <ButtonAdd title='Nuevo' onClick={setShowModal} showModal={showModal}/>
+                <ButtonAdd title='+' onClick={setShowModal} showModal={showModal}/>
             </SearchContainer>
             <Tab>
                 <OptionTab tabActive={sortByStatus} value='' nameTab='Todo' onClick={searchItemStatus} />

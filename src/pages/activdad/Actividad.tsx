@@ -63,9 +63,9 @@ const searchItemTab = (estado:string) => {
         <InputSeacrch value={searchValue} onChange={searchItem}/>
       </SearchContainer>      
       <Tab>
-        <OptionTab nameTab='Actividades' tabActive={tabActive} value='' onClick={searchItemTab}/>
-        <OptionTab nameTab='Pendiente' tabActive={tabActive} value='Pendiente' onClick={searchItemTab}/>
-        <OptionTab nameTab='Activo' tabActive={tabActive} value='Activo' onClick={searchItemTab}/>
+        <OptionTab nameTab='Todo' tabActive={tabActive} value='' onClick={searchItemTab}/>
+   {/*      <OptionTab nameTab='Pendiente' tabActive={tabActive} value='Pendiente' onClick={searchItemTab}/>
+        <OptionTab nameTab='Activo' tabActive={tabActive} value='Activo' onClick={searchItemTab}/> */}
       </Tab>
       <ContainerButtonSort>
       <DropDownSort>

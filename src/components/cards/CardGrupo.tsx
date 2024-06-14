@@ -2,6 +2,7 @@ import React,{ReactNode} from 'react'
 
 import { ItemDate } from '../../util/ItemDate'
 import { GrupoType } from '../../interfaces/Grupo'
+import { GetNames } from '../../util/GetName'
 interface CardProps{
   item:GrupoType
   children:ReactNode
@@ -21,7 +22,10 @@ function CardGrupo ( {item,children}:CardProps) {
        
         </div>
         <div className='card-info'>
-          <span>{item.integrantres}</span>
+          
+        {GetNames(item.integrantres).map((xname)=>(
+                <span>{xname}</span>
+            ))}
         
         </div>
         <div className='card-footer'>          

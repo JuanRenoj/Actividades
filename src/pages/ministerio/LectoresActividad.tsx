@@ -183,18 +183,18 @@ function LectoresActividad() {
             <TextInput value={lugar} onChange={handleLugar} label='Lugar' type='text' required/>
             <TextInput value={fecha} onChange={handleFecha} label='Fecha' type='date' required/>
             <TextInput value={hora} onChange={handleHora} label='Hora' type='time' required/>
-            <TextInput value={estado} onChange={handleEstado} label='Estado' type='text' required/>
+            <TextInput value={estado} onChange={handleEstado} label='Observación' type='text' required/>
         </Modal>
        
         <ModuleHeader>
             <SearchContainer>
                 <InputSeacrch value={searchValue} onChange={searchItem} />
-                <ButtonAdd title='Nuevo' onClick={setShowModal} showModal={showModal}/>
+                <ButtonAdd title='+' onClick={setShowModal} showModal={showModal}/>
             </SearchContainer>
             <Tab>
                 <OptionTab tabActive={sortByStatus} value='' nameTab='Todo' onClick={searchItemStatus} />
-                <OptionTab tabActive={sortByStatus} value='Activo' nameTab='Activo' onClick={searchItemStatus} />
-                <OptionTab tabActive={sortByStatus} value='Pendiente' nameTab='Pendiente' onClick={searchItemStatus} />
+                {/* <OptionTab tabActive={sortByStatus} value='Activo' nameTab='Activo' onClick={searchItemStatus} />
+                <OptionTab tabActive={sortByStatus} value='Pendiente' nameTab='Pendiente' onClick={searchItemStatus} /> */}
             </Tab>
             <ContainerButtonSort>
             <DropDownSort>
