@@ -6,24 +6,23 @@ let newDate=new Date(date)
 
 let item:ItemDatesType={
     day:date.split("-")[2],
-    dayName:newDate.toLocaleString("es-GT",{weekday:"long"}),
-    monthName:newDate.toLocaleString("es-GT",{month:"long"}),
+    /* dayName:newDate.toLocaleString("es-GT",{weekday:"long"}),
+    monthName:newDate.toLocaleString("es-GT",{month:"long"}), */
+    dayName:getDayName(newDate.getDay()),
+    monthName:getMonthName(newDate.getMonth()),
     year:newDate.getFullYear().toString(),
 }
 return item
 }
 
-function getDayName(date:string):string{
-    let dayName=""
-    let newDate=new Date(date);
-    dayName=newDate.toLocaleDateString("es-GT",{weekday:"long"})
-    return dayName
+function getDayName(index:number):string{
+    let days=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"]
+    return days[index]
 }
-function getMonthName(date:string):string{
-    let nomthName=""
-    let newDate=new Date(date);
-    nomthName=newDate.toLocaleDateString("es-GT",{month:"long"})
-    return nomthName
+function getMonthName(index:number):string{
+    let months=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+   
+    return months[index]
 }
 function getDayFromDate(date:string):string{
     let day=""
