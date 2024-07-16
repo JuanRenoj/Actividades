@@ -20,8 +20,7 @@ function getDayName(index:number):string{
     return days[index]
 }
 function getMonthName(index:number):string{
-    let months=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
-   
+    let months=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]   
     return months[index]
 }
 function getDayFromDate(date:string):string{

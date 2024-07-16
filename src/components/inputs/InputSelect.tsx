@@ -27,14 +27,7 @@ function InputSelect({item,value,onClick,onChange,label,disabled,required}:Props
    }
    
     
-    const names= (integrantes:string):string[] => {
-        console.log(integrantes)
-      let result:string[]=[]
-      if(integrantes !==undefined){
-      result=integrantes.split(",");
-      }
-      return result
-    }
+   
     
     return (
   <div className={style.container}>

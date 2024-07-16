@@ -29,7 +29,7 @@ function Lectores() {
     <>
     <ModuleHeader>
       <Tab>
-        <OptionTab  tabActive={tabActive} onClick={selectTab} value='Actividad' nameTab='Actvidad'/>
+        <OptionTab  tabActive={tabActive} onClick={selectTab} value='Actividad' nameTab='Actividad'/>
         <OptionTab  tabActive={tabActive}  onClick={selectTab} value='Turno' nameTab='Turno'/>
         <OptionTab  tabActive={tabActive}  onClick={selectTab} value='Grupo' nameTab='Grupo'/>
       </Tab>

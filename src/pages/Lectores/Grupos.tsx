@@ -155,7 +155,7 @@ function Grupos() {
         <ToastContainer/>
         <Modal show={showModal} setShow={setShowModal} onSubmit={handelSubmit} title={title} >
             <TextInput value={nombre} onChange={handleNombre} label='Nombre' type='text' required/>
-            <TextInput value={integrantes} onChange={handleLugar} label='Integrantes (* separar  los nombre por la coma)' type='text' required/>           
+            <TextInput value={integrantes} onChange={handleLugar} label='Integrantes (* separar  los nombre por medio de la coma)' type='text' required/>           
         </Modal>
        
         <ModuleHeader>
