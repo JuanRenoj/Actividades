@@ -31,7 +31,7 @@ import InputSelect from '../../components/inputs/InputSelect'
 import { Actividades } from '../../util/Strings'
 
 function LectoresActividad() {
-    const TABLENAME="Actividad"
+    const TABLENAME="ActivityLectores"
     const MINISTERIO="Lectores"
     const db=getFirestore();
     const [showModal, setShowModal] = useState<boolean>(false)

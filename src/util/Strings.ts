@@ -6,6 +6,7 @@ export const Actividades=[
     "Eucaristía",
     "Rezo del Santo Rosario",
     "Hora Santa",
+    "Reunión",
     "Formaciones",
     "Retiro",
     "Encuentro",

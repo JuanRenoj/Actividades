@@ -80,5 +80,19 @@ ErrorDelete(){
       
         });
 }
+ErrorToken(){
+    toast.error('Erro de codigo de acceso', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      
+        });
+}
+
 }
 export default new Alert;

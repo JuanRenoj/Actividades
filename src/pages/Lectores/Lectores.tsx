@@ -2,6 +2,10 @@ import React,{ useState, useCallback, lazy} from 'react'
 import ModuleHeader from '../../components/containers/ModuleHeader'
 import Tab from '../../components/tabs/Tab'
 import OptionTab from '../../components/tabs/OptionTab'
+import { accessToPage } from '../../util/Strings'
+import { toast, ToastContainer } from 'react-toastify'
+import DialogInput from '../../components/containers/DialogInput'
+import Alert from '../../util/Alert'
 const Actividad=lazy(()=>import("./LectoresActividad"))
 const Grupo=lazy(()=>import("./Grupos"))
 const Turno=lazy(()=>import("./LectoresTurno"))
@@ -9,9 +13,11 @@ const Turno=lazy(()=>import("./LectoresTurno"))
 function Lectores() {
     const [tabActive, setTabActive] = useState<string>("Actividad")
 
-    const selectTab = (params:string) => {
-      setTabActive(params)
+    const selectTab = (tab:string) => {
+    
+        setTabActive(tab)
     }
+   
 
     const Page =useCallback( ():JSX.Element => {
       switch(tabActive){
@@ -27,6 +33,7 @@ function Lectores() {
     
   return (
     <>
+    <ToastContainer/>
     <ModuleHeader>
       <Tab>
         <OptionTab  tabActive={tabActive} onClick={selectTab} value='Actividad' nameTab='Actividad'/>

@@ -41,7 +41,7 @@ function SideBar({open,center,setCenter,setOpen}:SideBarProps) {
                 <div className={`${view ?"sub-menu sub-menu-open":"sub-menu"}`}>
                 <ul >
                     <li className={`${center ==="Lectores" ? ACTIVE:MENU_ITEM}`} onClick={()=>handleCenter("Lectores")}>Lectores</li>
-                <li className={`${center ==="Coros" ? ACTIVE:MENU_ITEM}`} onClick={()=>handleCenter("Coros")}>Coros</li>
+                    <li className={`${center ==="Coros" ? ACTIVE:MENU_ITEM}`} onClick={()=>handleCenter("Coros")}>Coros</li>
                     <li className={`${center ==="Delegados" ? ACTIVE:MENU_ITEM}`} onClick={()=>handleCenter("Delegados")}>Delegados</li>
                     <li className={`${center ==="Ministros" ? ACTIVE:MENU_ITEM}`} onClick={()=>handleCenter("Ministros")}>Ministros</li>
                     <li className={`${center ==="Monaguillos" ? ACTIVE:MENU_ITEM}`} onClick={()=>handleCenter("Monaguillos")}>Monaguillos</li>

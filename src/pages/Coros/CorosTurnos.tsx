@@ -6,7 +6,7 @@ import Alert from '../../util/Alert'
 import "../../service/firebase";
 import {getFirestore,collection, addDoc,getDocs} from 'firebase/firestore'
 
-import { TurnoType, getDataTurno } from '../../interfaces/Turno'
+import { getDataTurnoCoros, TurnoType } from '../../interfaces/Turno'
 import SubDataContainer from '../../components/containers/SubDataContainer'
 import CardActividad from '../../components/cards/CardActividad'
 import ModuleHeader from '../../components/containers/ModuleHeader'
@@ -38,7 +38,7 @@ import { Actividades, NameCoros } from '../../util/Strings'
 
 
 function CorosTurnos() {
-    const TABLENAME="TurnoCoros"
+    const TABLENAME="Turnos"
     const MINISTERIO="Coros"
     const db=getFirestore();
     const [showModal, setShowModal] = useState<boolean>(false)
@@ -114,7 +114,7 @@ function CorosTurnos() {
           
         }
         const insertActivity = async():Promise<void> => {
-           let result=await Data.InsertNew(getDataTurno(nombre,lugar,fecha,hora,encargado,estado),TABLENAME);
+           let result=await Data.InsertNew(getDataTurnoCoros(nombre,lugar,fecha,hora,encargado,estado),TABLENAME);
            if(result){
               Alert.SuccessInsert();
               clearInputs()
@@ -124,7 +124,7 @@ function CorosTurnos() {
             Alert.ErrorInsert();         
         }
         const updateActivity =async ():Promise<void> => {
-          let result=await Data.UpdateItem(getDataTurno(nombre,lugar,fecha,hora,encargado,estado),TABLENAME,id)
+          let result=await Data.UpdateItem(getDataTurnoCoros(nombre,lugar,fecha,hora,encargado,estado),TABLENAME,id)
           if(result){
             Alert.SuccessUpdate();
             clearInputs()
@@ -167,7 +167,7 @@ function CorosTurnos() {
           setFecha(params.fecha)
           setHora(params.hora)
           setEstado(params.estado)
-          setEncargado(params.encargados)
+          setEncargado(params.coros!)
           setAction("update")
           setShowModal(true)     
           setTitle("Actualizar Turno")     
@@ -236,7 +236,7 @@ function CorosTurnos() {
         {turnoData.length>0 ?
         
          turnoData.map((item,index)=>(
-         <CardTurno item={item} key={index} >
+         <CardTurno item={item} key={index}  type="coro">
             <ButtonDelete<TurnoType> item={item} onClick={openConfirmDelete} />
             <ButtonEditar<TurnoType> item={item}  onClick={openEditModal} />
             

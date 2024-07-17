@@ -19,10 +19,11 @@ import InputSeacrch from '../../components/inputs/InputSeacrch';
 import ModuleHeader from '../../components/containers/ModuleHeader';
 import Data from '../../service/Data';
 import ContainerButtonSort from '../../components/containers/ContainerButtonSort';
+import CardTurnos from '../../components/cards/CardTurnos';
 
 function Activdad() {
   const db=getFirestore();
-  const TABLENAME="Actividad"
+  const TABLENAME="Turnos"
 const [tabActive, setTabActive] = useState<string>("")
 const [activityData, setActivityData] = useState<ActividadType[]>([]);
 const [activityDataAux, setActivityDataAux] = useState<ActividadType[]>([]);
@@ -78,7 +79,9 @@ const searchItemTab = (estado:string) => {
     <DataContainer>
       {activityData.length>0 ?
       activityData.map((item,index)=>(
-         <CardActividad key={index} item={item}/>
+         <CardTurnos key={index} item={item}>
+
+         </CardTurnos>
       ))
       
       :
