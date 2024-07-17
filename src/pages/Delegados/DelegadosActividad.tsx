@@ -30,8 +30,8 @@ import ContainerButtonSort from '../../components/containers/ContainerButtonSort
 import InputSelect from '../../components/inputs/InputSelect'
 import { Actividades } from '../../util/Strings'
 
-function MinistrosActividad() {
-    const TABLENAME="ActivityMinistros"
+function DelegadosActividad() {
+    const TABLENAME="ActivityDelegados"
     const MINISTERIO="Lectores"
     const db=getFirestore();
     const [showModal, setShowModal] = useState<boolean>(false)
@@ -225,4 +225,4 @@ function MinistrosActividad() {
     }
     
 
-export default MinistrosActividad
+export default DelegadosActividad

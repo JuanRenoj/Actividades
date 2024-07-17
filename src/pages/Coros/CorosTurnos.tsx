@@ -195,6 +195,7 @@ function CorosTurnos() {
         const selectActividad = (actividad:string) => {
           setNombre(actividad)
         }
+      
         
         
       return (

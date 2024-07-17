@@ -37,7 +37,7 @@ import InputSelect from '../../components/inputs/InputSelect'
 import { Actividades } from '../../util/Strings'
 
 
-function LectoresActividad() {
+function LectoresTurno() {
     const TABLENAME="Turnos"
     const MINISTERIO="Lectores"
     const db=getFirestore();
@@ -262,4 +262,4 @@ function LectoresActividad() {
     }
     
 
-export default LectoresActividad
+export default LectoresTurno

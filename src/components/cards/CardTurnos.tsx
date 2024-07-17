@@ -7,9 +7,10 @@ import { DayInterval } from '../../util/DayInterva';
 interface CardProps{
   item:TurnoType
   children?:ReactNode
+  onClick:(ministrio:string,openModal:boolean,nameGroup:string)=>void
  
 }
-function CardTurnos ( {item,children}:CardProps) {
+function CardTurnos ( {item,children,onClick}:CardProps) {
 const date=ItemDate(item.fecha);
 const encargados = (params:string) => {
 
@@ -36,11 +37,11 @@ const encargados = (params:string) => {
           <span>Lugar y Hora:</span>
           <span>{item.lugar}</span>
           <span>{`${item.hora} Hrs`}</span>   
-          <span>{`Delegado: ${encargados(item.delegados!)}`}</span>
-          <span>{`Lectores: ${encargados(item.lectores!)}`}</span>
-          <span>{`Ministros: ${encargados(item.ministros!)}`}</span>
-           <span>{`Monaguillos: ${encargados(item.monaguillos!)} `}</span>
-           <span>{`Coros: ${encargados(item.coros!)}`}</span> 
+          <span className='btn-group' >{`Delegado: ${encargados(item.delegados!)}`}</span>
+          <span className='btn-group' onClick={()=>onClick("Lectores",true,item.lectores!)}>{`Lectores: ${encargados(item.lectores!)}`}</span>
+          <span className='btn-group' onClick={()=>onClick("Ministros",true,item.ministros!)}>{`Ministros: ${encargados(item.ministros!)}`}</span>
+          <span className='btn-group' onClick={()=>onClick("Monaguillos",true,item.monaguillos!)}>{`Monaguillos: ${encargados(item.monaguillos!)} `}</span>
+          <span className='btn-group'>{`Coros: ${encargados(item.coros!)}`}</span> 
       
 
            <span className='label-observacion'>{`Obs.: ${item.estado}`}</span>

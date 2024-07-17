@@ -67,7 +67,7 @@ export const getDataTurnoMonaguillos=(nombre:string,lugar:string,fecha: string,h
         lugar:lugar,
         fecha:fecha,
         hora:hora,
-        lectores:monaguillos,
+        monaguillos:monaguillos,
         estado:estado
 
     }

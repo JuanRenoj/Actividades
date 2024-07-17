@@ -332,6 +332,11 @@ overflow-x: hidden;
   font-size: 0.8rem;
   color: var(--acent);
 }
+
+.btn-group:hover{
+  cursor: pointer;
+  color: var(--acent);
+}
 /*=================================================css de los textiputs del los formularios=====================*/
 .div-input{
 display: flex;

@@ -22,6 +22,12 @@ export const NameCoros=[
     "Nueva Vida en Cristo",
     "Seguidores de Cristo"
 ]
+export const NameDelegados=[
+    "Esteban Oxlaj",
+    "Anacleto Hernandez",
+    "Cruz Pastor",
+    "Victor Salvador"
+]
 export const accessToPage=[
     {nimisterio:"Lectores",token:"lect4578"},
     {nimisterio:"Delegados",token:"Dele6792"},
